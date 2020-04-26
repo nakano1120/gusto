@@ -65,6 +65,9 @@
         transform: translateY(4px);/*下に動く*/
         border-bottom: none;/*線を消す*/
     }
+    #men{
+        display:none;
+    }
     </style>
 </head>
 <body>
@@ -82,10 +85,12 @@
             <div id="osechi">
 
             </div>
+            <a href="#" id="men" class="btn-square" onclick="botan();">ツイートする</a>
         </div>
     </div>
     <script>
     let teigi = 1500
+    let tweet_text=""
     const gas = {
         "チーズONチーズINハンバーグ":799,
         "チーズINハンバーグ":599,
@@ -293,10 +298,13 @@
         document.getElementById("osechi").innerHTML=""
         let now = 0
         let caltotal = 0
+        tweet_text=""
         while(parseInt(now * 1.08) < teigi){
             if(parseInt(now * 1.08) > teigi - 215){
                 var zeikomi = parseInt(now * 1.08)
                 document.getElementById("osechi").innerHTML+=("<div class='centering_item3'>合計 ¥"+ zeikomi + " 税抜 ¥"+ now + " ("+caltotal+"kcal)</div><br>")
+                document.getElementById("men").style.display="inline-block"
+                tweet_text+="合計 ¥"+zeikomi+"%0D%0A";
                 break;
             }
             var objLength = 0;
@@ -317,8 +325,16 @@
                 caltotal += kcal
                 var onezei = parseInt(price*1.08)
                 document.getElementById("osechi").innerHTML+=("<div class='centering_item2'>"+tabe + " ¥" + onezei+" ("+kcal+"kcal)</div><br>")
+                tweet_text+=tabe+"%0D%0A";
             }
         }
+    }
+    function openTwitter(text,url,hash,account) {
+	    var turl = "https://twitter.com/intent/tweet?text="+text+"&url="+url+"&hashtags="+hash;
+	    window.open(turl,'_blank');
+    }
+    function botan(){
+        openTwitter("ガストガチャ　結果%0D%0A"+tweet_text+"%0D%0A","https://nakano1120.github.io/gusto/index.html","ガストガチャ");
     }
     </script>
 </body>
