@@ -1,0 +1,78 @@
+body{
+    text-align: center;
+    margin:0;
+}
+.centering_parent {
+    text-align:center;
+    padding: 20px;              /* 余白指定 */
+    background-color:  #a00;    /* 背景色指定 */
+    color: #fff;
+    width: 100%;              /* 高さ指定 */
+    height: 100vh;
+}
+
+.centering_item {
+    background-color: #f0f000;  /* 背景色指定 */
+    color: #000;
+    width: 80%;               /* 幅指定 */
+    height: 70%;               /* 高さ指定 */
+    margin:  0 auto;            /* 中央寄せ */
+}
+.centering_item2 {
+    border-radius: 2vw;
+    background-color: #ffffaa;  /* 背景色指定 */
+    color: #000;
+    width: 80%;               /* 幅指定 */
+    height: 10%;               /* 高さ指定 */
+    margin:  0 auto;            /* 中央寄せ */
+    animation-name: fade-in1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+}
+@keyframes fade-in1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.centering_item3 {
+    border-radius: 1vw;
+    background-color: #aaff00;  /* 背景色指定 */
+    color: #f00;
+    width: 80%;               /* 幅指定 */
+    height: 10%;               /* 高さ指定 */
+    margin:  0 auto; 
+    animation-name: fade-in1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;            /* 中央寄せ */
+}
+.bigsize{
+    font-size:200%
+}
+.btn-square {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #ff9999;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 2vw;
+    animation-name: fade-in1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+}
+.btn-square:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+#men{
+    display:none;
+}
+.tweet{
+    position: relative;
+    bottom:0;
+}
